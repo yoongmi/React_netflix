@@ -57,5 +57,6 @@
     "@types/react-helmet": "^6.1.5",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.26"
-  }
+  },
+  "homepage": "https://yoongmi.github.io/React_netflix"
 }

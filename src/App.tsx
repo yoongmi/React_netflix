@@ -9,10 +9,17 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/movies/:movieId" element={<Home />}></Route>
-        <Route path="/tv" element={<Tv />}></Route>
-        <Route path="/search" element={<Search />}></Route>
+        <Route path="/React_netflix" element={<Home />}></Route>
+        <Route
+          path="/React_netflix/movies/:category/:movieId"
+          element={<Home />}
+        ></Route>
+        <Route path="/React_netflix/tv" element={<Tv />}></Route>
+        <Route
+          path="/React_netflix/tv/:category/:movieId"
+          element={<Tv />}
+        ></Route>
+        <Route path="/React_netflix/search" element={<Search />}></Route>
       </Routes>
     </Router>
   );

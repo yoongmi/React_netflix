@@ -24,8 +24,8 @@ interface IForm {
 
 const Header = () => {
   const [searchOpen, setSearchOpen] = useState(false);
-  const homeMatch = useMatch("/");
-  const tvMatch = useMatch("/tv");
+  const homeMatch = useMatch("/React_netflix/");
+  const tvMatch = useMatch("/React_netflix/tv");
   const inputAnimation = useAnimation();
   const navAnimation = useAnimation();
   const { scrollY } = useScroll();
@@ -55,7 +55,7 @@ const Header = () => {
   const history = useNavigate();
   const { register, handleSubmit } = useForm<IForm>();
   const onValid = (data: IForm) => {
-    history(`/search?keyword=${data.keyword}`);
+    history(`/React_netflix/search?keyword=${data.keyword}`);
   };
 
   return (
@@ -74,13 +74,13 @@ const Header = () => {
         </Logo>
         <Items>
           <Item>
-            <Link to="/">
+            <Link to="/React_netflix/">
               Home
               {homeMatch && <Circle layoutId="circle" />}
             </Link>
           </Item>
           <Item>
-            <Link to="/tv">
+            <Link to="/React_netflix/tv">
               tv Shows
               {tvMatch && <Circle layoutId="circle" />}
             </Link>
@@ -118,6 +118,7 @@ const Header = () => {
 
 const Nav = styled(motion.nav)`
   display: flex;
+  z-index: 99;
   justify-content: space-between;
   align-items: center;
   position: fixed;
@@ -190,6 +191,7 @@ const Input = styled(motion.input)`
   font-size: 16px;
   background-color: transparent;
   border: 1px solid ${(props) => props.theme.white.lighter};
+  background-color: ${(props) => props.theme.black.darker};
 `;
 
 export default Header;
